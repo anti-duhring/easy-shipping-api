@@ -1,5 +1,5 @@
 # Envs
-*.env
+.env
 .env.prod
 
 # compiled output
