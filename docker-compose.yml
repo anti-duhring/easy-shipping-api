@@ -7,6 +7,8 @@ services:
       - "5555:5555"
     volumes:
       - .:/home/node/app
+    extra_hosts:
+      - "host.docker.internal:10.0.0.104"
     
   db:
     image: bitnami/mongodb:5.0.17
