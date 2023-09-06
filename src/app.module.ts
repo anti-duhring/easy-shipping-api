@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { RoutesModule } from './routes/routes.module';
 import { ConfigModule } from '@nestjs/config';
-import { MapsModule } from './maps/maps.module';
 import { BullModule } from '@nestjs/bull';
 import { PrometheusModule } from '@willsoto/nestjs-prometheus';
+import { DirectionsModule } from './directions/directions.module';
+import { PlacesModule } from './places/places.module';
 
 @Module({
   imports: [
@@ -19,10 +18,9 @@ import { PrometheusModule } from '@willsoto/nestjs-prometheus';
     }),
     PrismaModule, 
     RoutesModule, 
-    MapsModule,
+    DirectionsModule,
+    PlacesModule,
     PrometheusModule.register()
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

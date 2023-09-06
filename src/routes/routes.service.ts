@@ -1,10 +1,9 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateRouteDto } from './dto/create-route.dto';
 import { UpdateRouteDto } from './dto/update-route.dto';
-import { PrismaService } from '../prisma/prisma/prisma.service';
-import { DirectionsService } from '../maps/directions/directions.service';
+import { PrismaService } from '../prisma/prisma.service';
+import { DirectionsService } from '../directions/directions.service';
 import { RoutesSerializer } from './routes.serializer';
-import { ClientKafka } from '@nestjs/microservices';
 import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 

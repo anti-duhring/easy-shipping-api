@@ -1,5 +1,5 @@
 import { Job } from "bull";
-import { RoutesDriverService } from "./routes-driver/routes-driver.service";
+import { RoutesDriverService } from "./routes-driver.service";
 import { Process, Processor } from "@nestjs/bull";
 
 @Processor('new-point')

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma/prisma.service';
-import { CreateRouteDriverDto } from '../dto/create-route.dto';
+import { PrismaService } from '../prisma/prisma.service';
+import { CreateRouteDriverDto } from './dto/create-route.dto';
 import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 import { DirectionsResponseData } from '@googlemaps/google-maps-services-js';

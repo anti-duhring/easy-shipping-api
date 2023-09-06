@@ -1,6 +1,5 @@
 import { SubscribeMessage, WebSocketGateway } from '@nestjs/websockets';
 import { Socket } from 'socket.io'
-import { RoutesDriverService } from '../routes-driver/routes-driver.service';
 import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 

@@ -1,18 +1,18 @@
 import { Module } from '@nestjs/common';
 import { RoutesService } from './routes.service';
 import { RoutesController } from './routes.controller';
-import { MapsModule } from 'src/maps/maps.module';
-import { RoutesDriverService } from './routes-driver/routes-driver.service';
-import { RoutesGateway } from './routes/routes.gateway';
+import { RoutesDriverService } from './routes-driver.service';
+import { RoutesGateway } from './routes.gateway';
 import { BullModule } from '@nestjs/bull';
 import { NewPointJob } from './new-point.job';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { KafkaProducerJob } from './kafka-producer.job';
 import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
+import { DirectionsModule } from 'src/directions/directions.module';
 
 @Module({
   imports: [
-    MapsModule, 
+    DirectionsModule,
     BullModule.registerQueue({ name: 'new-point'}, { name: 'kafka-producer' }),
     ClientsModule.register([
       {
@@ -21,7 +21,7 @@ import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
         options: {
           client: {
             clientId: 'nest',
-            brokers: ['host.docker.internal:9094']
+            brokers: ['kafka:9094']
           }
         }
       }
