@@ -12,8 +12,6 @@ services:
     
   db:
     image: bitnami/mongodb:5.0.17
-    volumes:
-      - mongodb_data:/bitnami/mongodb
     environment:
       MONGODB_ROOT_PASSWORD: root
       MONGODB_REPLICA_SET_MODE: primary
@@ -57,7 +55,3 @@ services:
   
   redis:
     image: redis:7.0.8-alpine
-
-volumes:
-  mongodb_data:
-    driver: local

@@ -8,7 +8,7 @@ import { NewPointJob } from './new-point.job';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { KafkaProducerJob } from './kafka-producer.job';
 import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
-import { DirectionsModule } from 'src/directions/directions.module';
+import { DirectionsModule } from '../directions/directions.module';
 
 @Module({
   imports: [
